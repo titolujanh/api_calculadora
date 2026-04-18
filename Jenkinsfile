@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clonar repo') {
-            steps {
-                git branch: 'main',
-                url: 'https://github.com/titolujanh/api_calculadora.git'
-            }
-        }
-
         stage('Build Docker') {
             steps {
                 sh 'docker build -t api-calculadora .'
