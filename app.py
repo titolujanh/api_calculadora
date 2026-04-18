@@ -31,6 +31,11 @@ def division():
     if b == 0:
         return jsonify(error="No se puede dividir entre cero"), 400
     return jsonify(resultado=a / b)
+@app.route('/potencia', methods=['GET'])
+def potencia():
+    a = float(request.args.get('a'))
+    b = float(request.args.get('b'))
+    return jsonify(resultado=a ** b)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
